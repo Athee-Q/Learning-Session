@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+
+<body>
+
+    <script>
+        /* side nav bar */
+        const sideNav = document.querySelector(".nav-menu");
+        const Toggler = document.querySelector(".toggler");
+        const navOverlay = document.querySelector(".side-nav-overlay");
+
+        Toggler.addEventListener("click", () => {
+            sideNav.classList.add("open");
+        });
+
+        navOverlay.addEventListener("click", () => {
+            sideNav.classList.remove("open");
+        });
+        /* dropdown */
+        const item = document.querySelectorAll(".item ");
+        const mItem = document.querySelectorAll(".menu-item");
+
+        item.forEach((i) => {
+            i.addEventListener("click", () => {
+                mItem.forEach((e) => {
+                    if (!e.classList.contains("show")) e.classList.add("show");
+                    else e.classList.remove("show");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
