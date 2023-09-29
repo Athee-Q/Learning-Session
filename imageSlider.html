@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Image Slider with Content</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+       }
+       header{
+        height: 60px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+       }
+       #logo{
+        line-height: 60px;
+        margin-left: 40px;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        color: #3498db;
+       }
+       #logo:hover{
+        color: #ecf0f1;
+       }
+       #logos{
+        color: #ecf0f1;
+        margin-left: 5px;
+       }
+       #logo:hover #logo-s{
+        color: #3498db;
+       }
+       .sign{
+        float: right;
+        line-height: 60px;
+        margin-right: 40px;
+       }
+       .sign a{
+        color: #ffff;
+        font-weight: bold;
+        text-decoration: none;
+       }
+       .act{
+        border: 2px solid #ffff;
+        border-radius: 50px;
+        padding: 6px 15px;
+       }
+       .sign a:hover{
+        color: #3498db;
+        border-bottom: #3498db;
+       }
+       .sider{
+        position:relative;
+        width: 100%;
+        background: #2c3e50;
+       }
+       .myslider{
+        height: 665px;
+        display: none;
+        overflow: hidden;
+       }
+       .prev,.next{
+        position: absolute;
+        top: 50%;
+        transform: translate(0,-50%);
+        font-size: 50px;
+        cursor: pointer;
+        color: #ffff;
+        transition: 0.1s;
+       
+       }
+       .next{
+        right: 0;
+       }
+       .prev:hover, .next:hover{
+        color: #3498db;
+       }
+       .dotsbox{
+        position:absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 20px;
+        cursor: pointer;
+        background-color: #2c3e50;
+        }
+        .dot{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 3px solid #ffff;
+            border-radius: 50%;
+            margin:0 10px;
+            cursor: pointer;
+        }
+        .dot:active{
+            border:3px solid aquamarine;
+        }
+        .fade{
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade{
+            from{opacity: 0.8;}
+            to{opacity: 1;}
+        }
+        .txt{
+            position: absolute;
+            color: #ffff;
+            letter-spacing: 2px;
+            line-height: 35px;
+            top: 40%;
+            left: 15%;
+            animation-name: posi;
+            animation-duration: 2s;
+            z-index: 1;
+        }
+        @keyframes posi{
+            from{left: 25%;}
+            to{left:15%}
+        }
+        .txt h1{
+            color: #3498db;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .txt p{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        img{
+            transform:scale(1.2,1.5);
+            animation: zoomin;
+            animation-duration: 40s;
+        }
+        @keyframes zoomin{
+            from{transform: scale(1,1);}
+            to{transform: scale(1.5,1.5);}
+        }
+        @media screen and (max-width:800px) {
+            .myslider{
+                height: 500px;
+            }
+            .txt{
+                line-height: 25px;
+                top: 50%;
+                left: 50%;
+                transform: traslate(-50%,-50%);
+                animation-name: posi2;
+                animation-duration: 2s;
+            }
+            @keyframes posi2 {
+                from{top:35%;}
+                to{top:50%;}                
+            }
+            .txt h1{
+                font-size: 40px;
+            }
+            .txt p{
+                font-size: 13px;
+            }
+            .sign{
+                margi-right:20px;
+            }
+            .sign a{
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">slider <a id="logo-s">code</a></div>
+        <span class="sign"> <a href="#" class="act">sign up</a></span>
+        <span class="sign"> <a href="#" >sign up</a></span>
+    </header>
+    <div class="slider">
+        <div class="myslider fade" style="display: block;">
+            <div class="txt">
+                <h1>Image 1</h1>
+                <P>web development <br> software development life cycle <br> SDLC</P>
+            </div>
+            <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg" alt="img1" width="100%" height="100%">
+        </div>
+        <div class="myslider fade">
+            <div class="txt">
+                <h1>Image 2</h1>
+                <P>web development <br> software development life cycle <br> SDLC</P>
+            </div>
+            <img src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="img1" width="100%" height="100%">
+        </div>
+        <div class="myslider fade">
+            <div class="txt">
+                <h1>Image 3</h1>
+                <P>web development <br> software development life cycle <br> SDLC</P>
+            </div>
+            <img src="https://us.123rf.com/450wm/andreykr/andreykr1701/andreykr170100050/72147240-paris-november-2-eiffel-tower-surrounded-by-tourists-on-november-2-2016-in-paris-france.jpg" alt="img1" width="100%" height="100%">
+        </div>
+        <div class="myslider fade">
+            <div class="txt">
+                <h1>Image 4</h1>
+                <P>web development <br> software development life cycle <br> SDLC</P>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJSVRPKEn4zQP2r6UTm8Ci7Tq4bfEvgzfnrtZMHeuN6nr1yc0Mtc8sAzqvWHncHVudn8&usqp=CAU" alt="img1" width="100%" height="100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dotsbox" style="text-align: center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+    
+
+    <script>
+       const myslide = document.querySelectorAll('.myslider'),
+       dot = document.querySelectorAll('.dot');
+       let counter=1;
+       let timer = setInterval(autoslide,8000);
+       function autoslide(){
+        counter += 1;
+        slidefun(counter);
+       }
+       function plusSlides(n){
+        counter += n;
+        slidefun(counter);
+        resetTimer();
+       }
+       function currentSlide(n){
+        counter = n;
+        slidefun(counter);
+        resetTimer();
+       }
+       function resetTimer(){
+        clearInterval(timer);
+        timer = setInterval(autoslide,8000);
+       }
+       function slidefun(n){
+        let i;
+        for(i =0; i<myslide.length;i++){
+            myslide[i].style.display= "none";
+        }
+        for(i =0; i<dot.length;i++){
+            dot[i].classList.remove('active');
+        }
+        if(n > myslide.length){
+            counter = 1;
+        }
+        if(n < 1){
+            counter=myslide.length;
+        }
+        myslide[counter -1].style.display = "block";
+        dot[counter -1].classList.add('active')
+       }
+    </script>
+</body>
+</html>
+
